@@ -2963,7 +2963,7 @@
             "$ref" : "#/components/parameters/Offset"
           },
           {
-            "description" : "The result set can be sorted by the marked fields in the Fields section below. Format: &sort=field:direction where direction is either asc or desc.<br /><br />**Supported Fields**:\n- `date_added`\n- `date_last_updated`\n- `id`\n- `name`",
+            "description" : "The result set can be sorted by the listed fields below.<br /><br />*Format*: `&sort=field:direction` where `direction` is either `asc` or `desc`.<br /><br />**Supported Fields**:\n- `date_added`\n- `date_last_updated`\n- `id`\n- `name`",
             "in" : "query",
             "name" : "sort",
             "schema" : {
@@ -3302,7 +3302,7 @@
             "$ref" : "#/components/parameters/Offset"
           },
           {
-              "description" : "The result set can be sorted by the marked fields in the Fields section below. Format: &sort=field:direction where direction is either asc or desc.<br /><br />**Supported Fields**:\n- `birthday`\n- `date_added`\n- `date_last_updated`\n- `gender`\n- `id`\n- `name`\n- `real_name`",
+              "description" : "The result set can be sorted by the listed fields below.<br /><br />*Format*: `&sort=field:direction` where `direction` is either `asc` or `desc`.<br /><br />**Supported Fields**:\n- `birthday`\n- `date_added`\n- `date_last_updated`\n- `gender`\n- `id`\n- `name`\n- `real_name`",
               "in" : "query",
               "name" : "sort",
               "schema" : {
@@ -3951,7 +3951,7 @@
             "$ref" : "#/components/parameters/Offset"
           },
           {
-              "description" : "The result set can be sorted by the listed fields below. Format: &sort=field:direction where direction is either asc or desc.<br /><br />**Supported Fields**:\n- `abbreviation`\n- `date_added`\n- `date_founded`\n- `date_last_updated`\n- `id`\n- `location_city`\n- `location_country`\n- `location_state`\n- `name`",
+              "description" : "The result set can be sorted by the listed fields below.<br /><br />*Format*: `&sort=field:direction` where `direction` is either `asc` or `desc`.<br /><br />**Supported Fields**:\n- `abbreviation`\n- `date_added`\n- `date_founded`\n- `date_last_updated`\n- `id`\n- `location_city`\n- `location_country`\n- `location_state`\n- `name`",
               "in" : "query",
               "name" : "sort",
               "schema" : {
