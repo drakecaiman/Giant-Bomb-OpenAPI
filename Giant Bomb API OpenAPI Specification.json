@@ -736,6 +736,11 @@
         },
         "type" : "object"
       },
+      "DateTime" : {
+        "description" : "##ENTER##",
+        "pattern" : "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}",
+        "type" : "string"
+      },
       "Dlc" : {
         "description" : "##ENTER##",
         "properties" : {
@@ -1304,16 +1309,16 @@
         },
         "type" : "object"
       },
+      "GUID" : {
+        "description" : "##ENTER##",
+        "pattern" : "\\d+-\\d+",
+        "type" : "string"
+      },
       "Image" : {
         "description" : "##ENTER##",
         "properties" : {
           "icon_url" : {
             "description" : "URL to the icon version of the image.",
-            "example" : "##WRONG TYPE##",
-            "type" : "string"
-          },
-          "image_tag" : {
-            "description" : "Name of image tag for filtering images.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -1356,6 +1361,37 @@
             "description" : "URL to the tiny version of the image.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "Image.Tagged" : {
+        "allOf" : [
+          {
+            "$ref" : "#/components/schemas/Image"
+          },
+          {
+            "properties" : {
+              "image_tags" : {
+                "description" : "List of image tags to filter the images endpoint.",
+                "type" : "string"
+              }
+            }
+          }
+        ]
+      },
+      "ImageTag" : {
+        "description" : "##ENTER##",
+        "properties" : {
+          "api_detail_url": {
+            "type" : "string",
+            "format" : "uri"
+          },
+          "name": {
+            "type" : "string"
+          },
+          "total": {
+            "type" : "integer"
           }
         },
         "type" : "object"
@@ -2487,7 +2523,7 @@
               "image" : {
                 "description" : "##ENTER##",
 #                 "example" : "##WRONG TYPE##",
-                "format" : "url",
+                "format" : "uri",
                 "type" : "string"
               }
             },
@@ -2507,7 +2543,7 @@
                 "image" : {
                   "description" : "##ENTER##",
   #                 "example" : "##WRONG TYPE##",
-                  "format" : "url",
+                  "format" : "uri",
                   "type" : "string"
                 },
                 "premium" : {
