@@ -19,7 +19,7 @@
         }
       },
       "Format" : {
-        "description" : "The data format of the response takes either xml, json, or jsonp.",
+        "description" : "The data format of the response.",
         "in" : "query",
         "name" : "format",
         "required" : false,
@@ -82,7 +82,7 @@
         }
       },
       "Resources" : {
-        "description" : "List of resources to filter results. This filter can accept multiple arguments, each delimited with a \",\". Available options are:<br />game<br />franchise<br />character<br />concept<br />object<br />location<br />person<br />company<br />video",
+        "description" : "List of resources to filter results. This filter can accept multiple arguments, each delimited with a \",\".",
         "explode" : false,
         "in" : "query",
         "name" : "resources",
@@ -2398,7 +2398,7 @@
                     "$ref" : "#/components/schemas/ResourceType"
                   },
                   {
-                    "description" : "The type of resource the result is mapped to. Available options are:<br />game<br />franchise<br />character<br />concept<br />object<br />location<br />person<br />company<br />video"
+                    "description" : "The type of resource the result is mapped to."
                   }
                 ]
               }
