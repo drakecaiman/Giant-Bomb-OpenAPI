@@ -230,7 +230,7 @@
                 "type" : "string"
               },
               "enemies" : {
-                "description" : "Enemeis of the character.",
+                "description" : "Enemies of the character.",
                 "example" : "##WRONG TYPE##",
                 "type" : "string"
               },
@@ -272,7 +272,7 @@
         "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
-            "description" : "List of aliases the character is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the character is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -480,7 +480,7 @@
             "type" : "string"
           },
           "aliases" : {
-            "description" : "List of aliases the company is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the company is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -632,7 +632,7 @@
         "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
-            "description" : "List of aliases the concept is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the concept is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -870,7 +870,7 @@
         "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
-            "description" : "List of aliases the franchise is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the franchise is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -1057,7 +1057,7 @@
         "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
-            "description" : "List of aliases the game is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the game is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -1398,7 +1398,7 @@
         "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
-            "description" : "List of aliases the location is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the location is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -1520,7 +1520,7 @@
         "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
-            "description" : "List of aliases the object is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the object is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -1645,7 +1645,7 @@
         "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
-            "description" : "List of aliases the person is known by. A \\n (newline) seperates each alias.",
+            "description" : "List of aliases the person is known by. A \\n (newline) separates each alias.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -2186,7 +2186,7 @@
             "type" : "string"
           },
           "singleplayer_features" : {
-            "description" : "Singleplayer features",
+            "description" : "Single-player features",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
@@ -2570,7 +2570,7 @@
             "type" : "string"
           },
           "game" : {
-            "description" : "Game being reviewd.",
+            "description" : "Game being reviewed.",
             "example" : "##WRONG TYPE##",
             "type" : "string"
           },
