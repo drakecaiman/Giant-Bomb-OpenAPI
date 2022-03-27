@@ -2816,7 +2816,17 @@
                 "multiPlayerFeature" : {
                   "description" : "##ENTER##",
                   "enum" : [
-
+                    "Local co-op",
+                    "LAN co-op",
+                    "Online co-op",
+                    "Local competitive",
+                    "LAN competitive",
+                    "Online competitive",
+                    "Local splitscreen",
+                    "Online splitscreen",
+                    "Pass and play",
+                    "Voice chat",
+                    "Asynchronous multiplayer"
                   ],
                   "type" : "string"
                 }
