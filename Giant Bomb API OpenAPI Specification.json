@@ -3057,6 +3057,8 @@
           },
           "score" : {
             "description" : "The score given to the game on a scale of 1 to 5.",
+            "maximum" : 5,
+            "minimum" : 1,
             "type" : "integer"
           },
           "site_detail_url" : {
