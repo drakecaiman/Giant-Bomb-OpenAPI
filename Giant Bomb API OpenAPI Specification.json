@@ -3144,38 +3144,30 @@
         "type" : "boolean"
       },
       "Theme" : {
-        "description" : "##ENTER##",
-        "properties" : {
-          "api_detail_url" : {
-            "description" : "URL pointing to the theme detail resource.",
-            "format" : "uri",
-            "type" : "string"
+        "allOf" : [
+          {
+            "$ref" : "#/components/schemas/Relation.GUID"
           },
-          "guid" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/GUID"
+          {
+            "properties" : {
+              "api_detail_url" : {
+                "description" : "URL pointing to the theme detail resource."
               },
-              {
+              "guid" : {
                 "description" : "For use in single item api call for theme."
+              },
+              "id" : {
+                "description" : "Unique ID of the theme."
+              },
+              "name" : {
+                "description" : "Name of the theme."
+              },
+              "site_detail_url" : {
+                "description" : "URL pointing to the theme on Giant Bomb."
               }
-            ]
-          },
-          "id" : {
-            "description" : "Unique ID of the theme.",
-            "type" : "integer"
-          },
-          "name" : {
-            "description" : "Name of the theme.",
-            "type" : "string"
-          },
-          "site_detail_url" : {
-            "description" : "URL pointing to the theme on Giant Bomb.",
-            "format" : "uri",
-            "type" : "string"
+            }
           }
-        },
-        "type" : "object"
+        ]
       },
       "TimeToSave" : {
         "description" : "##ENTER##",
@@ -10518,6 +10510,7 @@
       },
       "summary" : "##ENTER##"
     },
+    
     "/api/themes" : {
       "description" : "##ENTER##",
       "get" : {
