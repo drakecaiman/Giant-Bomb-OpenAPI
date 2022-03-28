@@ -1236,7 +1236,7 @@
               "images" : {
                 "description" : "List of images associated to the game.",
                 "items" : {
-                  "$ref" : "#/components/schemas/Image.Tagged.Game"
+                  "$ref" : "#/components/schemas/Image.Tagged"
                 },
                 "type" : "array"
               },
@@ -1688,27 +1688,22 @@
         "allOf" : [
           {
             "$ref" : "#/components/schemas/Image"
-          },
+          }
+        ],
+        "oneOf" : [
           {
             "properties" : {
-              "image_tags" : {
-                "description" : "List of image tags to filter the images endpoint.",
-                "type" : "string"
+              "image_tags" :
+              {
+                "$ref" : "#/components/schemas/ImageTagList"
               }
             }
-          }
-        ]
-      },
-      "Image.Tagged.Game" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Image"
           },
           {
             "properties" : {
-              "tags" : {
-                "description" : "List of image tags to filter the images endpoint.",
-                "type" : "string"
+              "tags" : 
+              {
+                "$ref" : "#/components/schemas/ImageTagList"
               }
             }
           }
@@ -1729,6 +1724,10 @@
           }
         },
         "type" : "object"
+      },
+      "ImageTagList" : {
+        "description" : "List of image tags to filter the images endpoint.",
+        "type" : "string"
       },
       "InvalidAPIKey" : {
         "allOf" : [
@@ -3593,7 +3592,7 @@
                 "description" : "The latest episode of a video show. Overrides other sorts when used as a sort field.",
                 "items" : {
                   "$ref" : "#/components/schemas/Video.Base"
-                },
+                    },
                 "type" : "array"
               },
               "premium" : {
