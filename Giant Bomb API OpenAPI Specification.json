@@ -3592,7 +3592,7 @@
               "latest" : {
                 "description" : "The latest episode of a video show. Overrides other sorts when used as a sort field.",
                 "items" : {
-                  "$ref" : "#/components/schemas/Video"
+                  "$ref" : "#/components/schemas/Video.Base"
                 },
                 "type" : "array"
               },
