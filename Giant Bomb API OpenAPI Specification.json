@@ -3417,14 +3417,10 @@
               }
             ]
           },
-          "hd_url" : {
-            "description" : "URL to the HD version of the video.",
-            "format" : "uri",
-            "type" : "string"
-          },
           "high_url" : {
             "description" : "URL to the High Res version of the video.",
             "format" : "uri",
+            "nullable": true,
             "type" : "string"
           },
           "id" : {
