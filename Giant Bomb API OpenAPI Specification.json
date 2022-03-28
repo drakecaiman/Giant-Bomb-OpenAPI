@@ -3366,6 +3366,24 @@
         ]
       },
       "Video.Sparse" : {
+        "allOf" : [
+          {
+            "$ref" : "#/components/schemas/Video.Base"
+          },
+          {
+            "description" : "##ENTER##",
+            "properties" : {
+              "hd_url" : {
+                "description" : "URL to the HD version of the video.",
+                "format" : "uri",
+                "nullable": true,
+                "type" : "string"
+              }
+            }
+          }
+        ]
+      },
+      "Video.Base" : {
         "description" : "##ENTER##",
         "properties" : {
           "api_detail_url" : {
