@@ -2595,7 +2595,7 @@
           {
             "properties" : {
               "site_detail_url" : {
-                "description" : "URL pointing to the location on Giant Bomb.",
+                "description" : "##ENTER##",
                 "format" : "uri",
                 "type" : "string"
               }
@@ -2607,16 +2607,16 @@
         "description" : "##ENTER##",
         "properties" : {
           "api_detail_url" : {
-            "description" : "URL pointing to the location detail resource.",
+            "description" : "##ENTER##",
             "format" : "uri",
             "type" : "string"
           },
           "id" : {
-            "description" : "Unique ID of the location.",
+            "description" : "##ENTER##",
             "type" : "integer"
           },
           "name" : {
-            "description" : "Name of the location.",
+            "description" : "##ENTER##",
             "type" : "string"
           }
         },
@@ -2630,6 +2630,21 @@
           {
             "properties" : {
               "count" : {
+                "description" : "##ENTER##",
+                "type" : "string"
+              }
+            }
+          }
+        ]
+      },
+      "Relation.Deck" : {
+        "allOf" : [
+          {
+            "$ref" : "#/components/schemas/Relation"
+          },
+          {
+            "properties" : {
+              "deck" : {
                 "description" : "##ENTER##",
                 "type" : "string"
               }
@@ -3653,32 +3668,32 @@
         "type" : "object"
       },
       "VideoType" : {
-        "description" : "##ENTER##",
-        "properties" : {
-          "api_detail_url" : {
-            "description" : "URL pointing to the video_type detail resource.",
-            "format" : "uri",
-            "type" : "string"
+        "allOf": [
+          {
+            "$ref" : "#/components/schemas/Relation.Deck"
           },
-          "deck" : {
-            "description" : "Brief summary of the video_type.",
-            "type" : "string"
-          },
-          "id" : {
-            "description" : "Unique ID of the video_type.",
-            "type" : "integer"
-          },
-          "name" : {
-            "description" : "Name of the video_type.",
-            "type" : "string"
-          },
-          "site_detail_url" : {
-            "description" : "URL pointing to the video_type on Giant Bomb.",
-            "format" : "uri", 
-            "type" : "string"
+          {
+            "description" : "##ENTER##",
+            "properties" : {
+              "api_detail_url" : {
+                "description" : "URL pointing to the video_type detail resource."
+              },
+              "deck" : {
+                "description" : "Brief summary of the video_type."
+              },
+              "id" : {
+                "description" : "Unique ID of the video_type."
+              },
+              "name" : {
+                "description" : "Name of the video_type."
+              },
+              "site_detail_url" : {
+                "description" : "URL pointing to the video_type on Giant Bomb."
+              }
+            },
+            "type" : "object"
           }
-        },
-        "type" : "object"
+        ]
       }
     },
     "securitySchemes" : {
