@@ -3229,8 +3229,8 @@
             {
               "properties" : {
                 "date" : {
+                  // Date format is "Short month, date, full year"
                   "description" : "##ENTER##",
-                  "example" : "##WRONG TYPE##",
                   "type" : "string"
                 },
                 "image" : {
@@ -3240,18 +3240,17 @@
                 },
                 "premium" : {
                   "description" : "##ENTER##",
-                  "example" : false,
                   "type" : "boolean"
                 },
                 "title" : {
                   "description" : "##ENTER##",
-                  "example" : "##WRONG TYPE##",
                   "type" : "string"
                 },
                 "type" : {
                   "description" : "##ENTER##",
                   "enum" : [
-                    "Live Show"
+                    "Live Show",
+                    "Episode"
                   ],
                   "type" : "string"
                 }
