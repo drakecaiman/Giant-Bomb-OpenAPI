@@ -203,7 +203,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the accessory."
@@ -231,74 +231,6 @@
       },
       "Character" : {
         "description" : "##ENTER##",
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Character.Sparse"
-          },
-          {
-            "properties" : {
-              "concepts" : {
-                "description" : "Concepts related to the character.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "enemies" : {
-                "description" : "Enemies of the character.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "franchises" : {
-                "description" : "Franchises related to the character.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "friends" : {
-                "description" : "Friends of the character.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "games" : {
-                "description" : "Games the character has appeared in.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "locations" : {
-                "description" : "Locations related to the character.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "objects" : {
-                "description" : "Objects related to the character.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "people" : {
-                "description" : "People who have worked with the character.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Character.Sparse" : {
-        "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
             "description" : "List of aliases the character is known by. A \\n (newline) separates each alias.",
@@ -312,6 +244,13 @@
           "birthday" : {
             "description" : "Birthday of the character.",
             "type" : "string"
+          },
+          "concepts" : {
+            "description" : "Concepts related to the character.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "date_added" : {
             "allOf" : [
@@ -341,15 +280,43 @@
             "description" : "Description of the character.",
             "type" : "string"
           },
+          "enemies" : {
+            "description" : "Enemies of the character.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "first_appeared_in_game" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Game where the character made its first appearance."
+                "description" : "Game where the character made its first appearance.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
+          },
+          "franchises" : {
+            "description" : "Franchises related to the character.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "friends" : {
+            "description" : "Friends of the character.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "games" : {
+            "description" : "Games the character has appeared in.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "gender" : {
             "allOf" : [
@@ -378,7 +345,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the character."
@@ -396,9 +363,30 @@
             "description" : "Last name of the character.",
             "type" : "string"
           },
+          "locations" : {
+            "description" : "Locations related to the character.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "name" : {
             "description" : "Name of the character.",
             "type" : "string"
+          },
+          "objects" : {
+            "description" : "Objects related to the character.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "people" : {
+            "description" : "People who have worked with the character.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "real_name" : {
             "description" : "Real name of the character.",
@@ -410,7 +398,7 @@
             "type" : "string"
           }
         },
-        "type" : "object"
+        "type" : "object" 
       },
       "Chat" : {
         "description" : "##ENTER##",
@@ -452,7 +440,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the chat."
@@ -481,88 +469,6 @@
         "type" : "object"
       },
       "Company" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Company.Sparse"
-          },
-          {
-            "properties" : {
-              "characters" : {
-                "description" : "Characters related to the company.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation.Counted"
-                },
-                "type" : "array"
-              },
-              "concepts" : {
-                "description" : "Concepts related to the company.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation.Counted"
-                },
-                "type" : "array"
-              },
-              "developed_games" : {
-                "description" : "Games the company has developed.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "developer_releases" : {
-                "description" : "Releases the company has developed.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "distributor_releases" : {
-                "description" : "Releases the company has distributed.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "locations" : {
-                "description" : "Locations related to the company.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation.Counted"
-                },
-                "type" : "array"
-              },
-              "objects" : {
-                "description" : "Objects related to the company.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation.Counted"
-                },
-                "type" : "array"
-              },
-              "people" : {
-                "description" : "People who have worked with the company.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation.Counted"
-                },
-                "type" : "array"
-              },
-              "published_games" : {
-                "description" : "Games published by the company.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "publisher_releases" : {
-                "description" : "Releases the company has published.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Company.Sparse" : {
-        "description" : "##ENTER##",
         "properties" : {
           "abbreviation" : {
             "description" : "Abbreviation of the company.",
@@ -578,6 +484,20 @@
             "description" : "URL pointing to the company detail resource.",
             "format" : "uri",
             "type" : "string"
+          },
+          "characters" : {
+            "description" : "Characters related to the company.\n\nThe following fields are included:\n\n`api_detail_url`n\n`count`\n\n`id`\n\n`name`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "concepts" : {
+            "description" : "Concepts related to the company.\n\nThe following fields are included:\n\n`api_detail_url`n\n`count`\n\n`id`\n\n`name`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "date_added" : {
             "allOf" : [
@@ -617,6 +537,27 @@
             "description" : "Description of the company.",
             "type" : "string"
           },
+          "developed_games" : {
+            "description" : "Games the company has developed.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "developer_releases" : {
+            "description" : "Releases the company has developed.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "distributor_releases" : {
+            "description" : "Releases the company has distributed.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "guid" : {
             "allOf" : [
               {
@@ -634,7 +575,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the company."
@@ -664,13 +605,48 @@
             "description" : "State the company resides in.",
             "type" : "string"
           },
+          "locations" : {
+            "description" : "Locations related to the company.\n\nThe following fields are included:\n\n`api_detail_url`n\n`count`\n\n`id`\n\n`name`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "name" : {
             "description" : "Name of the company.",
             "type" : "string"
           },
+          "objects" : {
+            "description" : "Objects related to the company.\n\nThe following fields are included:\n\n`api_detail_url`n\n`count`\n\n`id`\n\n`name`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "people" : {
+            "description" : "People who have worked with the company.\n\nThe following fields are included:\n\n`api_detail_url`n\n`count`\n\n`id`\n\n`name`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "phone" : {
             "description" : "Phone number of the company.",
             "type" : "string"
+          },
+          "published_games" : {
+            "description" : "Games published by the company.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "publisher_releases" : {
+            "description" : "Releases the company has published.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "site_detail_url" : {
             "description" : "URL pointing to the company on Giant Bomb.",
@@ -686,74 +662,6 @@
         "type" : "object"
       },
       "Concept" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Concept.Sparse"
-          },
-          {
-            "properties" : {
-              "characters" : {
-                "description" : "Characters related to the concept.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "concepts" : {
-                "description" : "Concepts related to the concept.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "franchises" : {
-                "description" : "Franchises related to the concept.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "games" : {
-                "description" : "Games the concept has appeared in.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "locations" : {
-                "description" : "Locations related to the concept.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "objects" : {
-                "description" : "Objects related to the concept.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "people" : {
-                "description" : "People who have worked with the concept.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "related_concepts" : {
-                "description" : "Other concepts related to the concept.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Concept.Sparse" : {
-        "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
             "description" : "List of aliases the concept is known by. A \\n (newline) separates each alias.",
@@ -763,6 +671,20 @@
             "description" : "URL pointing to the concept detail resource.",
             "format" : "uri",
             "type" : "string"
+          },
+          "characters" : {
+            "description" : "Characters related to the concept.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "concepts" : {
+            "description" : "Concepts related to the concept.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "date_added" : {
             "allOf" : [
@@ -798,7 +720,7 @@
                 "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Franchise where the concept made its first appearance."
+                "description" : "Franchise where the concept made its first appearance.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`"
               }
             ]
           },
@@ -808,9 +730,23 @@
                 "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Game where the concept made its first appearance."
+                "description" : "Game where the concept made its first appearance.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`"
               }
             ]
+          },
+          "franchises" : {
+            "description" : "Franchises related to the concept.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "games" : {
+            "description" : "Games the concept has appeared in.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "guid" : {
             "allOf" : [
@@ -829,7 +765,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the concept."
@@ -843,9 +779,37 @@
             },
             "type" : "array"
           },
+          "locations" : {
+            "description" : "Locations related to the concept.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "name" : {
             "description" : "Name of the concept.",
             "type" : "string"
+          },
+          "objects" : {
+            "description" : "Objects related to the concept.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "people" : {
+            "description" : "People who have worked with the concept.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "related_concepts" : {
+            "description" : "Other concepts related to the concept.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "site_detail_url" : {
             "description" : "URL pointing to the concept on Giant Bomb.",
@@ -931,10 +895,10 @@
           "game" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Game the dlc is for."
+                "description" : "Game the dlc is for.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
@@ -955,7 +919,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the dlc."
@@ -969,10 +933,10 @@
           "platform" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "The dlc's platform."
+                "description" : "The dlc's platform.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
@@ -1013,60 +977,6 @@
         "type" : "string"
       },
       "Franchise" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Franchise.Sparse"
-          },
-          {
-            "properties" : {
-              "characters" : {
-                "description" : "Characters related to the franchise.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "concepts" : {
-                "description" : "Concepts related to the franchise.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "games" : {
-                "description" : "Games the franchise has appeared in.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "locations" : {
-                "description" : "Locations related to the franchise.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "objects" : {
-                "description" : "Objects related to the franchise.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "people" : {
-                "description" : "People who have worked with the franchise.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Franchise.Sparse" : {
-        "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
             "description" : "List of aliases the franchise is known by. A \\n (newline) separates each alias.",
@@ -1077,6 +987,20 @@
             "description" : "URL pointing to the franchise detail resource.",
             "format" : "uri",
             "type" : "string"
+          },
+          "characters" : {
+            "description" : "Characters related to the franchise.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "concepts" : {
+            "description" : "Concepts related to the franchise.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "date_added" : {
             "allOf" : [
@@ -1106,6 +1030,13 @@
             "description" : "Description of the franchise.",
             "type" : "string"
           },
+          "games" : {
+            "description" : "Games the franchise has appeared in.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "guid" : {
             "allOf" : [
               {
@@ -1123,7 +1054,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the franchise."
@@ -1137,9 +1068,30 @@
             },
             "type" : "array"
           },
+          "locations" : {
+            "description" : "Locations related to the franchise.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "name" : {
             "description" : "Name of the franchise.",
             "type" : "string"
+          },
+          "objects" : {
+            "description" : "Objects related to the franchise.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "people" : {
+            "description" : "People who have worked with the franchise.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "site_detail_url" : {
             "description" : "URL pointing to the franchise on Giant Bomb.",
@@ -1150,173 +1102,6 @@
         "type" : "object"
       },
       "Game" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Game.Sparse"
-          },
-          {
-            "properties" : {
-              "characters" : {
-                "description" : "Characters related to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "concepts" : {
-                "description" : "Concepts related to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "developers" : {
-                "description" : "Companies who developed the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "dlcs" : {
-                "description" : "Game DLCs",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "first_appearance_characters" : {
-                "description" : "Characters that first appeared in the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "first_appearance_concepts" : {
-                "description" : "Concepts that first appeared in the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "first_appearance_locations" : {
-                "description" : "Locations that first appeared in the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "first_appearance_objects" : {
-                "description" : "Objects that first appeared in the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "first_appearance_people" : {
-                "description" : "People that were first credited in the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "franchises" : {
-                "description" : "Franchises related to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "genres" : {
-                "description" : "Genres that encompass the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "images" : {
-                "description" : "List of images associated to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Image.Tagged"
-                },
-                "type" : "array"
-              },
-              "killed_characters" : {
-                "description" : "Characters killed in the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "nullable" : true,
-                "type" : "array"
-              },
-              "locations" : {
-                "description" : "Locations related to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "objects" : {
-                "description" : "Objects related to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "people" : {
-                "description" : "People who have worked with the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "publishers" : {
-                "description" : "Companies who published the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "releases" : {
-                "description" : "Releases of the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "reviews" : {
-                "description" : "Staff reviews of the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "similar_games" : {
-                "description" : "Other games similar to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "themes" : {
-                "description" : "Themes that encompass the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "videos" : {
-                "description" : "Videos associated to the game.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Game.Sparse" : {
-        "description" : "##ENTER##",
         "properties" : {
           "aliases" : {
             "description" : "List of aliases the game is known by. A \\n (newline) separates each alias.",
@@ -1326,6 +1111,20 @@
             "description" : "URL pointing to the game detail resource.",
             "format" : "uri",
             "type" : "string"
+          },
+          "characters" : {
+            "description" : "Characters related to the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "concepts" : {
+            "description" : "Concepts related to the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           },
           "date_added" : {
             "allOf" : [
@@ -1355,6 +1154,20 @@
             "description" : "Description of the game.",
             "type" : "string"
           },
+          "developers" : {
+            "description" : "Companies who developed the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "dlcs" : {
+            "description" : "Game DLCs\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "expected_release_day" : {
             "description" : "Expected day of release. The month is represented numerically. Combine with 'expected_release_month', 'expected_release_year' and 'expected_release_quarter' for Giant Bomb's best guess release date of the game. These fields will be empty if the 'original_release_date' field is set.",
             "nullable" : true,
@@ -1375,6 +1188,55 @@
             "nullable" : true,
             "type" : "integer"
           },
+          "first_appearance_characters" : {
+            "description" : "Characters that first appeared in the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "first_appearance_concepts" : {
+            "description" : "Concepts that first appeared in the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "first_appearance_locations" : {
+            "description" : "Locations that first appeared in the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "first_appearance_objects" : {
+            "description" : "Objects that first appeared in the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "first_appearance_people" : {
+            "description" : "People that were first credited in the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "franchises" : {
+            "description" : "Franchises related to the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "genres" : {
+            "description" : "Genres that encompass the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "guid" : {
             "allOf" : [
               {
@@ -1392,17 +1254,39 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the game."
               }
             ]
           },
+          "images" : {
+            "description" : "List of images associated to the game.",
+            "items" : {
+              "$ref" : "#/components/schemas/Image"
+            },
+            "type" : "array"
+          },
           "image_tags" : {
             "description" : "List of image tags to filter the images endpoint.",
             "items" : {
               "$ref" : "#/components/schemas/ImageTag"
+            },
+            "type" : "array"
+          },
+          "killed_characters" : {
+            "description" : "Characters killed in the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "nullable" : true,
+            "type" : "array"
+          },
+          "locations" : {
+            "description" : "Locations related to the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
             },
             "type" : "array"
           },
@@ -1414,10 +1298,17 @@
             "description" : "Number of user reviews of the game on Giant Bomb.",
             "type" : "integer"
           },
-          "original_game_rating" : {
-            "description" : "Rating of the first release of the game.",
+          "objects" : {
+            "description" : "Objects related to the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
             "items" : {
-              "$ref" : "#/components/schemas/Relation.Sparse"
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "original_game_rating" : {
+            "description" : "Rating of the first release of the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
             },
             "type" : "array"
           },
@@ -1427,10 +1318,45 @@
             "format" : "date",
             "type" : "string"
           },
-          "platforms" : {
-            "description" : "The platforms the game exists on.",
+          "people" : {
+            "description" : "People who have worked with the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
             "items" : {
-              "$ref" : "#/components/schemas/Relation.Platform"
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "platforms" : {
+            "description" : "The platforms the game exists on.\n\n`abbreviation`\n\n`api_detail_url`\n\n`id`\n\n`name`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "publishers" : {
+            "description" : "Companies who published the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "releases" : {
+            "description" : "Releases of the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "reviews" : {
+            "description" : "Staff reviews of the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "similar_games" : {
+            "description" : "Other games similar to the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
             },
             "type" : "array"
           },
@@ -1438,6 +1364,20 @@
             "description" : "URL pointing to the game on Giant Bomb.",
             "format" : "uri",
             "type" : "string"
+          },
+          "themes" : {
+            "description" : "Themes that encompass the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
+          "videos" : {
+            "description" : "Videos associated to the game.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
           }
         },
         "type" : "object"
@@ -1471,7 +1411,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the game_rating.",
@@ -1486,10 +1426,10 @@
           "rating_board" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Rating board that issues this game_rating."
+                "description" : "Rating board that issues this game_rating.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           }
@@ -1558,7 +1498,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the genre."
@@ -1635,6 +1575,24 @@
       },
       "Image" : {
         "description" : "##ENTER##",
+        "oneOf" : [
+          {
+            "properties" : {
+              "image_tags" :
+              {
+                "$ref" : "#/components/schemas/ImageTagList"
+              }
+            }
+          },
+          {
+            "properties" : {
+              "tags" : 
+              {
+                "$ref" : "#/components/schemas/ImageTagList"
+              }
+            }
+          }
+        ],
         "properties" : {
           "icon_url" : {
             "description" : "URL to the icon version of the image.",
@@ -1683,31 +1641,6 @@
           }
         },
         "type" : "object"
-      },
-      "Image.Tagged" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Image"
-          }
-        ],
-        "oneOf" : [
-          {
-            "properties" : {
-              "image_tags" :
-              {
-                "$ref" : "#/components/schemas/ImageTagList"
-              }
-            }
-          },
-          {
-            "properties" : {
-              "tags" : 
-              {
-                "$ref" : "#/components/schemas/ImageTagList"
-              }
-            }
-          }
-        ]
       },
       "ImageTag" : {
         "description" : "##ENTER##",
@@ -1807,7 +1740,7 @@
             "type" : "string"
           },
           "first_appeared_in_game" : {
-            "description" : "Game where the location made its first appearance.",
+            "description" : "Game where the location made its first appearance.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
             "items" : {
               "$ref" : "#/components/schemas/Relation"
             },
@@ -1830,7 +1763,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the location."
@@ -1857,166 +1790,154 @@
         "type" : "object"
       },
       "Object" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Object.Sparse"
+        "properties": {
+          "aliases": {
+            "description": "List of aliases the object is known by. A \\n (newline) separates each alias.",
+            "example": "##WRONG TYPE##",
+            "type": "string"
           },
-          {
-            "properties" : {
-              "characters" : {
-                "description" : "Characters related to the object.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "companies" : {
-                "description" : "Companies related to the object.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "concepts" : {
-                "description" : "Concepts related to the object.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "franchises" : {
-                "description" : "Franchises related to the object.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "games" : {
-                "description" : "Games the object has appeared in.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "locations" : {
-                "description" : "Locations related to the object.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "people" : {
-                "description" : "People who have worked with the object.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "similar" : {
-                "description" : "Objects related to the object.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Object.Sparse" : {
-        "description" : "##ENTER##",
-        "properties" : {
-          "aliases" : {
-            "description" : "List of aliases the object is known by. A \\n (newline) separates each alias.",
-            "example" : "##WRONG TYPE##",
-            "type" : "string"
+          "api_detail_url": {
+            "description": "URL pointing to the object detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          "api_detail_url" : {
-            "description" : "URL pointing to the object detail resource.",
-            "format" : "uri",
-            "type" : "string"
-          },
-          "date_added" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/DateTime"
-              },
-              {
-                "description" : "Date the object was added to Giant Bomb."
-              }
-            ]
-          },
-          "date_last_updated" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/DateTime"
-              },
-              {
-                "description" : "Date the object was last updated on Giant Bomb."
-              }
-            ]
-          },
-          "deck" : {
-            "description" : "Brief summary of the object.",
-            "type" : "string"
-          },
-          "description" : {
-            "description" : "Description of the object.",
-            "type" : "string"
-          },
-          "first_appeared_in_game" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/Relation.Sparse"
-              },
-              {
-                "description" : "Game where the object made its first appearance."
-              }
-            ]
-          },
-          "guid" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/GUID"
-              },
-              {
-                "description" : "For use in single item api call for object."
-              }
-            ]
-          },
-          "id" : {
-            "description" : "Unique ID of the object.",
-            "type" : "integer"
-          },
-          "image" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/Image.Tagged"
-              },
-              {
-                "description" : "Main image of the object."
-              }
-            ]
-          },
-          "image_tags" : {
-            "description" : "List of image tags to filter the images endpoint.",
-            "items" : {
-              "$ref" : "#/components/schemas/ImageTag"
+          "characters": {
+            "description": "Characters related to the object.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
             },
-            "type" : "array"
+            "type": "array"
           },
-          "name" : {
-            "description" : "Name of the object.",
-            "example" : "##WRONG TYPE##",
-            "type" : "string"
+          "companies": {
+            "description": "Companies related to the object.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
           },
-          "site_detail_url" : {
-            "description" : "URL pointing to the object on Giant Bomb.",
-            "format" : "uri",
-            "type" : "string"
+          "concepts": {
+            "description": "Concepts related to the object.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "date_added": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              {
+                "description": "Date the object was added to Giant Bomb."
+              }
+            ]
+          },
+          "date_last_updated": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              {
+                "description": "Date the object was last updated on Giant Bomb."
+              }
+            ]
+          },
+          "deck": {
+            "description": "Brief summary of the object.",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the object.",
+            "type": "string"
+          },
+          "first_appeared_in_game": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Relation"
+              },
+              {
+                "description": "Game where the object made its first appearance.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
+              }
+            ]
+          },
+          "franchises": {
+            "description": "Franchises related to the object.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "games": {
+            "description": "Games the object has appeared in.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "guid": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GUID"
+              },
+              {
+                "description": "For use in single item api call for object."
+              }
+            ]
+          },
+          "id": {
+            "description": "Unique ID of the object.",
+            "type": "integer"
+          },
+          "image": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Image"
+              },
+              {
+                "description": "Main image of the object."
+              }
+            ]
+          },
+          "image_tags": {
+            "description": "List of image tags to filter the images endpoint.",
+            "items": {
+              "$ref": "#/components/schemas/ImageTag"
+            },
+            "type": "array"
+          },
+          "locations": {
+            "description": "Locations related to the object.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "name": {
+            "description": "Name of the object.",
+            "example": "##WRONG TYPE##",
+            "type": "string"
+          },
+          "people": {
+            "description": "People who have worked with the object.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "similar": {
+            "description": "Objects related to the object.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "site_detail_url": {
+            "description": "URL pointing to the object on Giant Bomb.",
+            "format": "uri",
+            "type": "string"
           }
         },
-        "type" : "object"
+        "type": "object"
       },
       "Offset" : {
         "description" : "##ENTER##",
@@ -2027,186 +1948,174 @@
         "type" : "integer"
       },
       "Person" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Person.Sparse"
+        "properties": {
+          "aliases": {
+            "description": "List of aliases the person is known by. A \\n (newline) separates each alias.",
+            "nullable": true,
+            "type": "string"
           },
-          {
-            "properties" : {
-              "characters" : {
-                "description" : "Characters related to the person.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "concepts" : {
-                "description" : "Concepts related to the person.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "franchises" : {
-                "description" : "Franchises related to the person.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "games" : {
-                "description" : "Games the person has appeared in.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "locations" : {
-                "description" : "Locations related to the person.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "objects" : {
-                "description" : "Objects related to the person.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "people" : {
-                "description" : "People who have worked with the person.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Person.Sparse" : {
-        "description" : "##ENTER##",
-        "properties" : {
-          "aliases" : {
-            "description" : "List of aliases the person is known by. A \\n (newline) separates each alias.",
-            "nullable" : true,
-            "type" : "string"
+          "api_detail_url": {
+            "description": "URL pointing to the person detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          "api_detail_url" : {
-            "description" : "URL pointing to the person detail resource.",
-            "format" : "uri",
-            "type" : "string"
+          "birth_date": {
+            "description": "Date the person was born.",
+            "format": "date",
+            "type": "string"
           },
-          "birth_date" : {
-            "description" : "Date the person was born.",
-            "format" : "date",
-            "type" : "string"
-          },
-          "country" : {
-            "description" : "Country the person resides in.",
-            "type" : "string"
-          },
-          "date_added" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/DateTime"
-              },
-              {
-                "description" : "Date the person was added to Giant Bomb."
-              }
-            ]
-          },
-          "date_last_updated" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/DateTime"
-              },
-              {
-                "description" : "Date the person was last updated on Giant Bomb."
-              }
-            ]
-          },
-          "death_date" : {
-            "description" : "Date the person died.",
-            "format" : "date",
-            "type" : "string"
-          },
-          "deck" : {
-            "description" : "Brief summary of the person.",
-            "type" : "string"
-          },
-          "description" : {
-            "description" : "Description of the person.",
-            "type" : "string"
-          },
-          "first_credited_game" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/Relation.Sparse"
-              },
-              {
-                "description" : "Game the person was first credited."
-              }
-            ]
-          },
-          "gender" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/Gender"
-              },
-              {
-                "description" : "Gender of the person. `0` for other, `1` for male, `2` for female."
-              }
-            ]
-          },
-          "guid" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/GUID"
-              },
-              {
-                "description" : "For use in single item api call for person."
-              }
-            ]
-          },
-          "hometown" : {
-            "description" : "City or town the person resides in.",
-            "type" : "string"
-          },
-          "id" : {
-            "description" : "Unique ID of the person.",
-            "type" : "integer"
-          },
-          "image" : {
-            "allOf" : [
-              {
-                "$ref" : "#/components/schemas/Image.Tagged"
-              },
-              {
-                "description" : "Main image of the person."
-              }
-            ]
-          },
-          "image_tags" : {
-            "description" : "List of image tags to filter the images endpoint.",
-            "items" : {
-              "$ref" : "#/components/schemas/ImageTag"
+          "characters": {
+            "description": "Characters related to the person.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
             },
-            "type" : "array"
+            "type": "array"
           },
-          "name" : {
-            "description" : "Name of the person.",
-            "type" : "string"
+          "concepts": {
+            "description": "Concepts related to the person.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
           },
-          "site_detail_url" : {
-            "description" : "URL pointing to the person on Giant Bomb.",
-            "format" : "uri",
-            "type" : "string"
+          "country": {
+            "description": "Country the person resides in.",
+            "type": "string"
+          },
+          "date_added": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              {
+                "description": "Date the person was added to Giant Bomb."
+              }
+            ]
+          },
+          "date_last_updated": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              {
+                "description": "Date the person was last updated on Giant Bomb."
+              }
+            ]
+          },
+          "death_date": {
+            "description": "Date the person died.",
+            "format": "date",
+            "type": "string"
+          },
+          "deck": {
+            "description": "Brief summary of the person.",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the person.",
+            "type": "string"
+          },
+          "first_credited_game": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Relation"
+              },
+              {
+                "description": "Game the person was first credited.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
+              }
+            ]
+          },
+          "franchises": {
+            "description": "Franchises related to the person.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "games": {
+            "description": "Games the person has appeared in.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "gender": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Gender"
+              },
+              {
+                "description": "Gender of the person. `0` for other, `1` for male, `2` for female."
+              }
+            ]
+          },
+          "guid": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GUID"
+              },
+              {
+                "description": "For use in single item api call for person."
+              }
+            ]
+          },
+          "hometown": {
+            "description": "City or town the person resides in.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique ID of the person.",
+            "type": "integer"
+          },
+          "image": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Image"
+              },
+              {
+                "description": "Main image of the person."
+              }
+            ]
+          },
+          "image_tags": {
+            "description": "List of image tags to filter the images endpoint.",
+            "items": {
+              "$ref": "#/components/schemas/ImageTag"
+            },
+            "type": "array"
+          },
+          "locations": {
+            "description": "Locations related to the person.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "name": {
+            "description": "Name of the person.",
+            "type": "string"
+          },
+          "objects": {
+            "description": "Objects related to the person.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "people": {
+            "description": "People who have worked with the person.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "site_detail_url": {
+            "description": "URL pointing to the person on Giant Bomb.",
+            "format": "uri",
+            "type": "string"
           }
         },
-        "type" : "object"
+        "type": "object"
       },
       "Platform" : {
         "description" : "##ENTER##",
@@ -2223,10 +2132,10 @@
           "company" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Company that created the platform."
+                "description" : "Company that created the platform.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
@@ -2275,7 +2184,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the platform."
@@ -2366,7 +2275,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the promo."
@@ -2404,316 +2313,212 @@
         "type" : "string"
       },
       "RatingBoard" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/RatingBoard.Sparse"
-          },
-          {
-            "properties" : {
-              "region" : {
-                "description" : "Regions the rating_board is responsible for.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation.Sparse"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "RatingBoard.Sparse" : {
-        "description" : "##ENTER##",
         "properties" : {
-          "api_detail_url" : {
-            "description" : "URL pointing to the rating_board detail resource.",
-            "format" : "uri",
-            "type" : "string"
+          "api_detail_url": {
+            "description": "URL pointing to the rating_board detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          "date_added" : {
-            "allOf" : [
+          "date_added": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/DateTime"
+                "$ref": "#/components/schemas/DateTime"
               },
               {
-                "description" : "Date the rating_board was added to Giant Bomb."
+                "description": "Date the rating_board was added to Giant Bomb."
               }
             ]
           },
-          "date_last_updated" : {
-            "allOf" : [
+          "date_last_updated": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/DateTime"
+                "$ref": "#/components/schemas/DateTime"
               },
               {
-                "description" : "Date the rating_board was last updated on Giant Bomb."
+                "description": "Date the rating_board was last updated on Giant Bomb."
               }
             ]
           },
-          "deck" : {
-            "description" : "Brief summary of the rating_board.",
-            "type" : "string"
+          "deck": {
+            "description": "Brief summary of the rating_board.",
+            "type": "string"
           },
-          "description" : {
-            "description" : "Description of the rating_board.",
-            "nullable" : true,
-            "type" : "string"
+          "description": {
+            "description": "Description of the rating_board.",
+            "nullable": true,
+            "type": "string"
           },
-          "guid" : {
-            "allOf" : [
+          "guid": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/GUID"
+                "$ref": "#/components/schemas/GUID"
               },
               {
-                "description" : "For use in single item api call for rating_board."
+                "description": "For use in single item api call for rating_board."
               }
             ]
           },
-          "id" : {
-            "description" : "Unique ID of the rating_board.",
-            "type" : "integer"
+          "id": {
+            "description": "Unique ID of the rating_board.",
+            "type": "integer"
           },
-          "image" : {
-            "allOf" : [
+          "image": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref": "#/components/schemas/Image"
               },
               {
-                "description" : "Main image of the rating_board."
+                "description": "Main image of the rating_board."
               }
             ]
           },
-          "name" : {
-            "description" : "Name of the rating_board.",
-            "type" : "string"
+          "name": {
+            "description": "Name of the rating_board.",
+            "type": "string"
           },
-          "site_detail_url" : {
-            "description" : "URL pointing to the rating_board on Giant Bomb.",
-            "format" : "uri",
-            "nullable" : true,
-            "type" : "string"
+          "region": {
+            "description": "Regions the rating_board is responsible for.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "site_detail_url": {
+            "description": "URL pointing to the rating_board on Giant Bomb.",
+            "format": "uri",
+            "nullable": true,
+            "type": "string"
           }
         },
-        "type" : "object"
+        "type": "object"
       },
       "Region" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Region.Sparse"
-          },
-          {
-            "properties" : {
-              "rating_boards" : {
-                "description" : "Rating boards in the region.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation.Sparse"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Region.Sparse" : {
-        "description" : "##ENTER##",
         "properties" : {
-          "api_detail_url" : {
-            "description" : "URL pointing to the region detail resource.",
-            "format" : "uri",
-            "type" : "string"
+          "api_detail_url": {
+            "description": "URL pointing to the region detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          "date_added" : {
-            "allOf" : [
+          "date_added": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/DateTime"
+                "$ref": "#/components/schemas/DateTime"
               },
               {
-                "description" : "Date the region was added to Giant Bomb."
+                "description": "Date the region was added to Giant Bomb."
               }
             ]
           },
-          "date_last_updated" : {
-            "allOf" : [
+          "date_last_updated": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/DateTime"
+                "$ref": "#/components/schemas/DateTime"
               },
               {
-                "description" : "Date the region was last updated on Giant Bomb."
+                "description": "Date the region was last updated on Giant Bomb."
               }
             ]
           },
-          "deck" : {
-            "description" : "Brief summary of the region.",
-            "nullable" : true,
-            "type" : "string"
+          "deck": {
+            "description": "Brief summary of the region.",
+            "nullable": true,
+            "type": "string"
           },
-          "description" : {
-            "description" : "Description of the region.",
-            "nullable" : true,
-            "type" : "string"
+          "description": {
+            "description": "Description of the region.",
+            "nullable": true,
+            "type": "string"
           },
-          "guid" : {
-            "allOf" : [
+          "guid": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/GUID"
+                "$ref": "#/components/schemas/GUID"
               },
               {
-                "description" : "For use in single item api call for region."
+                "description": "For use in single item api call for region."
               }
             ]
           },
-          "id" : {
-            "description" : "Unique ID of the region.",
-            "type" : "integer"
+          "id": {
+            "description": "Unique ID of the region.",
+            "type": "integer"
           },
-          "image" : {
-            "allOf" : [
+          "image": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref": "#/components/schemas/Image"
               },
               {
-                "description" : "Main image of the region."
+                "description": "Main image of the region."
               }
             ]
           },
-          "name" : {
-            "description" : "Name of the region.",
-            "type" : "string"
+          "name": {
+            "description": "Name of the region.",
+            "type": "string"
           },
-          "site_detail_url" : {
-            "description" : "URL pointing to the region on Giant Bomb.",
-            "format" : "uri",
-            "type" : "string"
+          "rating_boards": {
+            "description": "Rating boards in the region.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
+            },
+            "type": "array"
+          },
+          "site_detail_url": {
+            "description": "URL pointing to the region on Giant Bomb.",
+            "format": "uri",
+            "type": "string"
           }
         },
-        "type" : "object"
+        "type": "object"
       },
       "Relation" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Relation.Sparse"
+        "description": "##ENTER##",
+        "properties": {
+          "abbreviation": {
+            "description": "##ENTER##",
+            "type": "string"
           },
-          {
-            "properties" : {
-              "site_detail_url" : {
-                "description" : "##ENTER##",
-                "format" : "uri",
-                "type" : "string"
+          "api_detail_url": {
+            "description": "##ENTER##",
+            "format": "uri",
+            "type": "string"
+          },
+          "count": {
+            "description": "##ENTER##",
+            "type": "string"
+          },
+          "deck": {
+            "description": "##ENTER##",
+            "type": "string"
+          },
+          "guid": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GUID"
+              },
+              {
+                "description": "##ENTER##"
               }
-            }
-          }
-        ]
-      },
-      "Relation.Sparse" : {
-        "description" : "##ENTER##",
-        "properties" : {
-          "api_detail_url" : {
-            "description" : "##ENTER##",
-            "format" : "uri",
-            "type" : "string"
+            ]
           },
-          "id" : {
-            "description" : "##ENTER##",
-            "type" : "integer"
+          "id": {
+            "description": "##ENTER##",
+            "type": "integer"
           },
-          "name" : {
-            "description" : "##ENTER##",
-            "type" : "string"
+          "name": {
+            "description": "##ENTER##",
+            "type": "string"
+          },
+          "site_detail_url": {
+            "description": "##ENTER##",
+            "format": "uri",
+            "type": "string"
           }
         },
-        "type" : "object"
-      },
-      "Relation.Counted" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Relation"
-          },
-          {
-            "properties" : {
-              "count" : {
-                "description" : "##ENTER##",
-                "type" : "string"
-              }
-            }
-          }
-        ]
-      },
-      "Relation.Deck" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Relation"
-          },
-          {
-            "properties" : {
-              "deck" : {
-                "description" : "##ENTER##",
-                "type" : "string"
-              }
-            }
-          }
-        ]
-      },
-      "Relation.GUID" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Relation"
-          },
-          {
-            "properties" : {
-              "guid" : {
-                "allOf" : [
-                  {
-                    "$ref" : "#/components/schemas/GUID"
-                  },
-                  {
-                    "description" : "##ENTER##"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "Relation.Platform" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Relation"
-          },
-          {
-            "properties" : {
-              "abbreviation" : {
-                "description" : "##ENTER##",
-                "type" : "string"
-              }
-            }
-          }
-        ]
+        "type": "object"
       },
       "Release" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Release.Sparse"
-          },
-          {
-            "properties" : {
-              "developers" : {
-                "description" : "Companies who developed the release.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              },
-              "publishers" : {
-                "description" : "Companies who published the release.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Relation"
-                },
-                "type" : "array"
-              }
-            }
-          }
-        ]
-      },
-      "Release.Sparse" : {
         "description" : "##ENTER##",
         "properties" : {
           "api_detail_url" : {
@@ -2751,6 +2556,13 @@
             "nullable" : true,
             "type" : "string"
           },
+          "developers" : {
+            "description" : "Companies who developed the release.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "expected_release_day" : {
             "description" : "\"Expected day of release. The day is represented numerically. Combine with 'expected_release_month', 'expected_release_year' and 'expected_release_quarter' for Giant Bomb's best guess release date of the release. These fields will be empty if the 'release_date' field is set.\"",
             "nullable" : true,
@@ -2774,20 +2586,20 @@
           "game" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Game the release is for."
+                "description" : "Game the release is for.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
           "game_rating" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Rating of the release."
+                "description" : "Rating of the release.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
@@ -2808,7 +2620,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the release."
@@ -2855,10 +2667,10 @@
           "platform" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "The release's platform."
+                "description" : "The release's platform.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
@@ -2872,13 +2684,20 @@
             "nullable" : true,
             "type" : "string"
           },
+          "publishers" : {
+            "description" : "Companies who published the release.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items" : {
+              "$ref" : "#/components/schemas/Relation"
+            },
+            "type" : "array"
+          },
           "region" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Region the release is responsible for."
+                "description" : "Region the release is responsible for.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
@@ -2893,16 +2712,16 @@
             ]
           },
           "resolutions" : {
-            "description" : "Resolutions available",
+            "description" : "Resolutions available\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`",
             "items" : {
-              "$ref" : "#/components/schemas/Relation.Sparse"
+              "$ref" : "#/components/schemas/Relation"
             },
             "type" : "array"
           },
           "singleplayer_features" : {
-            "description" : "Single-player features",
+            "description" : "Single-player features\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`",
             "items" : {
-              "$ref" : "#/components/schemas/Relation.Sparse"
+              "$ref" : "#/components/schemas/Relation"
             },
             "type" : "array"
           },
@@ -2912,9 +2731,9 @@
             "type" : "string"
           },
           "sound_systems" : {
-            "description" : "Sound systems",
+            "description" : "Sound systems\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`",
             "items" : {
-              "$ref" : "#/components/schemas/Relation.Sparse"
+              "$ref" : "#/components/schemas/Relation"
             },
             "type" : "array"
           },
@@ -2978,23 +2797,6 @@
         }
       },
       "Review" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Review.Sparse"
-          },
-          {
-            "properties" : {
-              "platforms" : {
-                "description" : "Platforms the review appeared in.",
-                "example" : "##WRONG TYPE##",
-                "nullable" : true,
-                "type" : "string"
-              }
-            }
-          }
-        ]
-      },
-      "Review.Sparse" : {
         "description" : "##ENTER##",
         "properties" : {
           "api_detail_url" : {
@@ -3027,7 +2829,7 @@
                 "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Game the review is for."
+                "description" : "Game the review is for.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`"
               }
             ]
           },
@@ -3045,6 +2847,12 @@
             "description" : "Unique ID of the review.",
             "type" : "string"
           },
+          "platforms" : {
+            "description" : "Platforms the review appeared in.",
+            "example" : "##WRONG TYPE##",
+            "nullable" : true,
+            "type" : "string"
+          },
           "publish_date" : {
             "allOf" : [
               {
@@ -3058,10 +2866,10 @@
           "release" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Relation.Sparse"
+                "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Game the review is for."
+                "description" : "Game the review is for.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`"
               }
             ]
           },
@@ -3102,31 +2910,31 @@
           {
             "oneOf" : [
               {
-                "$ref" : "#/components/schemas/Game.Sparse"
+                "$ref" : "#/components/schemas/Game"
               },
               {
-                "$ref" : "#/components/schemas/Franchise.Sparse"
+                "$ref" : "#/components/schemas/Franchise"
               },
               {
-                "$ref" : "#/components/schemas/Character.Sparse"
+                "$ref" : "#/components/schemas/Character"
               },
               {
-                "$ref" : "#/components/schemas/Concept.Sparse"
+                "$ref" : "#/components/schemas/Concept"
               },
               {
-                "$ref" : "#/components/schemas/Object.Sparse"
+                "$ref" : "#/components/schemas/Object"
               },
               {
                 "$ref" : "#/components/schemas/Location"
               },
               {
-                "$ref" : "#/components/schemas/Person.Sparse"
+                "$ref" : "#/components/schemas/Person"
               },
               {
-                "$ref" : "#/components/schemas/Company.Sparse"
+                "$ref" : "#/components/schemas/Company"
               },
               {
-                "$ref" : "#/components/schemas/Video.Sparse"
+                "$ref" : "#/components/schemas/Video"
               }
             ]
           },
@@ -3158,30 +2966,36 @@
         "type" : "boolean"
       },
       "Theme" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Relation.GUID"
+        "properties" : {
+          "api_detail_url" : {
+            "description" : "URL pointing to the theme detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          {
-            "properties" : {
-              "api_detail_url" : {
-                "description" : "URL pointing to the theme detail resource."
+          "guid" : {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GUID"
               },
-              "guid" : {
+              {
                 "description" : "For use in single item api call for theme."
-              },
-              "id" : {
-                "description" : "Unique ID of the theme."
-              },
-              "name" : {
-                "description" : "Name of the theme."
-              },
-              "site_detail_url" : {
-                "description" : "URL pointing to the theme on Giant Bomb."
               }
-            }
+            ]
+          },
+          "id" : {
+            "description" : "Unique ID of the theme.",
+            "type": "integer"
+          },
+          "name" : {
+            "description" : "Name of the theme.",
+            "type": "string"
+          },
+          "site_detail_url" : {
+            "description" : "URL pointing to the theme on Giant Bomb.",
+            "format": "uri",
+            "type": "string"
           }
-        ]
+        }
       },
       "TimeToSave" : {
         "description" : "##ENTER##",
@@ -3229,7 +3043,6 @@
             {
               "properties" : {
                 "date" : {
-                  // Date format is "Short month, date, full year"
                   "description" : "##ENTER##",
                   "type" : "string"
                 },
@@ -3309,7 +3122,7 @@
                 "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Game being reviewed."
+                "description" : "Game being reviewed.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`"
               }
             ]
           },
@@ -3333,7 +3146,7 @@
                 "$ref" : "#/components/schemas/Relation"
               },
               {
-                "description" : "Release being reviewed."
+                "description" : "Release being reviewed.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`"
               }
             ]
           },
@@ -3360,167 +3173,144 @@
         "type" : "object"
       },
       "Video" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Video.Sparse"
-          },
-          {
-            "properties" : {
-              "crew" : {
-                "description" : "Crew of the video.",
-                "type" : "string"
-              },
-              "hosts" : {
-                "description" : "Hosts of the video.",
-                "type" : "string"
-              }
-            }
-          }
-        ]
-      },
-      "Video.Sparse" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/Video.Base"
-          },
-          {
-            "description" : "##ENTER##",
-            "properties" : {
-              "hd_url" : {
-                "description" : "URL to the HD version of the video.",
-                "format" : "uri",
-                "nullable": true,
-                "type" : "string"
-              }
-            }
-          }
-        ]
-      },
-      "Video.Base" : {
         "description" : "##ENTER##",
         "properties" : {
-          "api_detail_url" : {
-            "description" : "URL pointing to the video detail resource.",
-            "format" : "uri",
-            "type" : "string"
+          "api_detail_url": {
+            "description": "URL pointing to the video detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          "associations" : {
-            "description" : "Related objects to the video.",
-            "items" : {
-              "$ref" : "#/components/schemas/Relation.GUID"
+          "associations": {
+            "description": "Related objects to the video.\n\nThe following fields are included:\n\n`api_detail_url`\n\n`guid`\n\n`id`\n\n`name`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
             },
-            "type" : "array"
+            "type": "array"
           },
-          "deck" : {
-            "description" : "Brief summary of the video.",
-            "type" : "string"
+          "crew": {
+            "description": "Crew of the video.",
+            "type": "string"
           },
-          "embed_player" : {
-            "description" : "URL for video embed player. To be inserted into an iFrame.<br />You can add `?autoplay=true` to auto-play.<br />You can add `?time=x` where `x` is an integer between 0 and the length of the video in seconds to start the video at that point.<br />You can add `?vol=x` where `x` is a decimal between 0 and 1, .75 for example, to set the starting volume.<br />The above three parameters may be used together. Example: `?time=45&vol=.5&autoplay=true`<br />See `http://www.giantbomb.com/api/video-embed-sample/` for more information on using the embed player.",
-            "format" : "uri",
-            "type" : "string"
+          "deck": {
+            "description": "Brief summary of the video.",
+            "type": "string"
           },
-          "guid" : {
-            "allOf" : [
+          "embed_player": {
+            "description": "URL for video embed player. To be inserted into an iFrame.<br />You can add `?autoplay=true` to auto-play.<br />You can add `?time=x` where `x` is an integer between 0 and the length of the video in seconds to start the video at that point.<br />You can add `?vol=x` where `x` is a decimal between 0 and 1, .75 for example, to set the starting volume.<br />The above three parameters may be used together. Example: `?time=45&vol=.5&autoplay=true`<br />See `http://www.giantbomb.com/api/video-embed-sample/` for more information on using the embed player.",
+            "format": "uri",
+            "type": "string"
+          },
+          "guid": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/GUID"
+                "$ref": "#/components/schemas/GUID"
               },
               {
-                "description" : "For use in single item api call for video."
+                "description": "For use in single item api call for video."
               }
             ]
           },
-          "high_url" : {
-            "description" : "URL to the High Res version of the video.",
-            "format" : "uri",
+          "hd_url": {
+            "description": "URL to the HD version of the video.",
+            "format": "uri",
             "nullable": true,
-            "type" : "string"
+            "type": "string"
           },
-          "id" : {
-            "description" : "Unique ID of the video.",
-            "type" : "integer"
+          "high_url": {
+            "description": "URL to the High Res version of the video.",
+            "format": "uri",
+            "nullable": true,
+            "type": "string"
           },
-          "image" : {
-            "allOf" : [
+          "hosts": {
+            "description": "Hosts of the video.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique ID of the video.",
+            "type": "integer"
+          },
+          "image": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref": "#/components/schemas/Image"
               },
               {
-                "description" : "Main image of the video."
+                "description": "Main image of the video."
               }
             ]
           },
-          "length_seconds" : {
-            "description" : "Length (in seconds) of the video.",
-            "type" : "integer"
+          "length_seconds": {
+            "description": "Length (in seconds) of the video.",
+            "type": "integer"
           },
-          "low_url" : {
-            "description" : "URL to the Low Res version of the video.",
-            "format" : "uri",
-            "nullable" : true,
-            "type" : "string"
+          "low_url": {
+            "description": "URL to the Low Res version of the video.",
+            "format": "uri",
+            "nullable": true,
+            "type": "string"
           },
-          "name" : {
-            "description" : "Name of the video.",
-            "type" : "string"
+          "name": {
+            "description": "Name of the video.",
+            "type": "string"
           },
-          "premium" : {
-            "description" : "Premium status of video.",
-            "type" : "boolean"
+          "premium": {
+            "description": "Premium status of video.",
+            "type": "boolean"
           },
-          "publish_date" : {
-            "allOf" : [
+          "publish_date": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/DateTime"
+                "$ref": "#/components/schemas/DateTime"
               },
               {
-                "description" : "Date the video was published on Giant Bomb."
+                "description": "Date the video was published on Giant Bomb."
               }
             ]
           },
-          "saved_time" : {
-            "description" : "The time where the user left off watching this video",
-            "nullable" : true,
-            "type" : "string"
+          "saved_time": {
+            "description": "The time where the user left off watching this video",
+            "nullable": true,
+            "type": "string"
           },
-          "site_detail_url" : {
-            "description" : "URL pointing to the video on Giant Bomb.",
-            "format" : "uri",
-            "type" : "string"
+          "site_detail_url": {
+            "description": "URL pointing to the video on Giant Bomb.",
+            "format": "uri",
+            "type": "string"
           },
-          "url" : {
-            "description" : "The video's filename.",
-            "type" : "string"
+          "url": {
+            "description": "The video's filename.",
+            "type": "string"
           },
-          "user" : {
-            "description" : "Author of the video.",
-            "type" : "string"
+          "user": {
+            "description": "Author of the video.",
+            "type": "string"
           },
-          "video_categories" : {
-            "description" : "Video categories",
-            "items" : {
-              "$ref" : "#/components/schemas/Relation"
+          "video_categories": {
+            "description": "Video categories\n\nThe following fields are included:\n\n`api_detail_url`\n\n`id`\n\n`name`\n\n`site_detail_url`",
+            "items": {
+              "$ref": "#/components/schemas/Relation"
             },
-            "type" : "array"
+            "type": "array"
           },
-          "video_show" : {
-            "allOf" : [
+          "video_show": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/VideoShow.Sparse"
+                "$ref": "#/components/schemas/VideoShow"
               },
               {
-                "description" : "Video show"
+                "description": "Video show"
               }
             ]
           },
-          "video_type" : {
-            "description" : "Video category",
-            "type" : "string"
+          "video_type": {
+            "description": "Video category",
+            "type": "string"
           },
-          "youtube_id" : {
-            "description" : "Youtube ID for the video.",
-            "nullable" : true,
-            "type" : "string"
+          "youtube_id": {
+            "description": "Youtube ID for the video.",
+            "nullable": true,
+            "type": "string"
           }
         },
         "type" : "object"
@@ -3544,7 +3334,7 @@
           "image" : {
             "allOf" : [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref" : "#/components/schemas/Image"
               },
               {
                 "description" : "Main image of the video_category."
@@ -3568,131 +3358,118 @@
         "type" : "integer"
       },
       "VideoShow" : {
-        "allOf" : [
-          {
-            "$ref" : "#/components/schemas/VideoShow.Sparse"
-          },
-          {
-            "description" : "##ENTER##",
-            "properties" : {
-              "active" : {
-                "description" : "Is this show currently active",
-                "type" : "boolean"
-              },
-              "api_videos_url" : {
-                "description" : "Endpoint to retrieve the videos attached to this video_show.",
-                "format" : "uri",
-                "type" : "string"
-              },
-              "deck" : {
-                "description" : "Brief summary of the video_show.",
-                "type" : "string"
-              },
-              "display_nav" : {
-                "description" : "Should this show be displayed in navigation menus",
-                "type" : "boolean"
-              },
-              "guid" : {
-                "allOf" : [
-                  {
-                    "$ref" : "#/components/schemas/GUID"
-                  },
-                  {
-                    "description" : "For use in single item api call for video_show."
-                  }
-                ]
-              },
-              "latest" : {
-                "description" : "The latest episode of a video show. Overrides other sorts when used as a sort field.",
-                "items" : {
-                  "$ref" : "#/components/schemas/Video.Base"
-                    },
-                "type" : "array"
-              },
-              "premium" : {
-                "description" : "Premium status of video_show.",
-                "type" : "boolean"
-              }
-            },
-            "type" : "object"
-          }
-        ]
-      },
-      "VideoShow.Sparse" : {
         "description" : "##ENTER##",
         "properties" : {
-          "api_detail_url" : {
-            "description" : "URL pointing to the video_show detail resource.",
-            "format" : "uri",
-            "type" : "string"
+          "active": {
+            "description": "Is this show currently active",
+            "type": "boolean"
           },
-          "id" : {
-            "description" : "Unique ID of the video_show.",
-            "type" : "integer"
+          "api_detail_url": {
+            "description": "URL pointing to the video_show detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          "image" : {
-            "allOf" : [
+          "api_videos_url": {
+            "description": "Endpoint to retrieve the videos attached to this video_show.",
+            "format": "uri",
+            "type": "string"
+          },
+          "deck": {
+            "description": "Brief summary of the video_show.",
+            "type": "string"
+          },
+          "display_nav": {
+            "description": "Should this show be displayed in navigation menus",
+            "type": "boolean"
+          },
+          "guid": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/Image.Tagged"
+                "$ref": "#/components/schemas/GUID"
               },
               {
-                "description" : "Main image of the video_show."
+                "description": "For use in single item api call for video_show."
               }
             ]
           },
-          "logo" : {
-            "allOf" : [
+          "id": {
+            "description": "Unique ID of the video_show.",
+            "type": "integer"
+          },
+          "image": {
+            "allOf": [
               {
-                "$ref" : "#/components/schemas/Image"
+                "$ref": "#/components/schemas/Image"
               },
               {
-                "description" : "Show logo."
+                "description": "Main image of the video_show."
               }
             ]
           },
-          "position" : {
-            "description" : "Editor ordering.",
-            "type" : "integer"
+          "latest": {
+            "description": "The latest episode of a video show. Overrides other sorts when used as a sort field.",
+            "items": {
+              "$ref": "#/components/schemas/Video"
+            },
+            "type": "array"
           },
-          "site_detail_url" : {
-            "description" : "URL pointing to the video_show on Giant Bomb.",
-            "format" : "uri",
-            "type" : "string"
+          "logo": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Image"
+              },
+              {
+                "description": "Show logo."
+              }
+            ]
           },
-          "title" : {
-            "description" : "Title of the video_show.",
-            "type" : "string"
+          "position": {
+            "description": "Editor ordering.",
+            "type": "integer"
+          },
+          "premium": {
+            "description": "Premium status of video_show.",
+            "type": "boolean"
+          },
+          "site_detail_url": {
+            "description": "URL pointing to the video_show on Giant Bomb.",
+            "format": "uri",
+            "type": "string"
+          },
+          "title": {
+            "description": "Title of the video_show.",
+            "type": "string"
           }
         },
         "type" : "object"
       },
       "VideoType" : {
-        "allOf": [
-          {
-            "$ref" : "#/components/schemas/Relation.Deck"
+        "description" : "##ENTER##",
+        "properties" : {
+          "api_detail_url" : {
+            "description" : "URL pointing to the video_type detail resource.",
+            "format": "uri",
+            "type": "string"
           },
-          {
-            "description" : "##ENTER##",
-            "properties" : {
-              "api_detail_url" : {
-                "description" : "URL pointing to the video_type detail resource."
-              },
-              "deck" : {
-                "description" : "Brief summary of the video_type."
-              },
-              "id" : {
-                "description" : "Unique ID of the video_type."
-              },
-              "name" : {
-                "description" : "Name of the video_type."
-              },
-              "site_detail_url" : {
-                "description" : "URL pointing to the video_type on Giant Bomb."
-              }
-            },
-            "type" : "object"
+          "deck" : {
+            "description" : "Brief summary of the video_type.",
+            "type": "string"
+          },
+          "id" : {
+            "description" : "Unique ID of the video_type.",
+            "type": "integer"
+          },
+          "name" : {
+            "description" : "Name of the video_type.",
+            "type": "string"
+          },
+          "site_detail_url" : {
+            "description" : "URL pointing to the video_type on Giant Bomb.",
+            "format": "uri",
+            "type": "string"
           }
-        ]
+        },
+        "type" : "object"
       }
     },
     "securitySchemes" : {
@@ -3717,7 +3494,7 @@
     "/api/accessories" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/accessories`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-3"
@@ -3775,13 +3552,13 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
           },
           {
-            "description" : "The result can be filtered by the marked fields in the Fields section below.<br />\n- *Single filter*: `&filter=field:value`\n- *Multiple filters*: `&filter=field:value,field:value`\n- *Date filters*: `&filter=field:start value|end value` (using datetime format)<br /><br />\n**Supported Fields**:\n- `date_added`\n- `date_last_updated`\n- `id`\n- `name`",
+            "description" : "The result can be filtered by the marked fields in the Fields section below.<br />\n- *Single filter*: `&filter=field:value`\n- *Multiple filters*: `&filter=field:value,field:value`\n- *Date filters*: `&filter=field:start value|end value` (using datetime format)\n\n**Supported Fields**:\n- `date_added`\n- `date_last_updated`\n- `id`\n- `name`",
             "in" : "query",
             "name" : "filter",
             "schema" : {
@@ -3901,7 +3678,7 @@
     "/api/accessory/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/accessory`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-2"
@@ -4050,7 +3827,7 @@
     "/api/characters" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`birthday`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`first_appeared_in_game`\n\n`gender`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`last_name`\n\n`name`\n\n`real_name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/characters`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-5"
@@ -4114,7 +3891,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((birthday)|(date_added)|(date_last_updated)|(gender)|(id)|(name)|(real_name)):((asc)|(desc))$",
+                  "pattern" : "^((birthday)|(date_added)|(date_last_updated)|(gender)|(id)|(name)|(real_name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -4148,7 +3925,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Character.Sparse"
+                            "$ref" : "#/components/schemas/Character"
                           },
                           "type" : "array"
                         },
@@ -4174,7 +3951,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Character.Sparse"
+                            "$ref" : "#/components/schemas/Character"
                           },
                           "type" : "array"
                         },
@@ -4200,7 +3977,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Character.Sparse"
+                            "$ref" : "#/components/schemas/Character"
                           },
                           "type" : "array"
                         },
@@ -4240,7 +4017,7 @@
     "/api/character/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`birthday`\n\n`concepts`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`enemies`\n\n`first_appeared_in_game`\n\n`franchises`\n\n`friends`\n\n`games`\n\n`gender`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`last_name`\n\n`locations`\n\n`name`\n\n`objects`\n\n`people`\n\n`real_name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/character`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-4"
@@ -4403,7 +4180,7 @@
     "/api/chats" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`channel_name`\n\n`deck`\n\n`guid`\n\n`history`\n\n`id`\n\n`image`\n\n`password`\n\n`player`\n\n`site_detail_url`\n\n`title`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/chats`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-7"
@@ -4551,7 +4328,7 @@
     "/api/chat/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`channel_name`\n\n`deck`\n\n`guid`\n\n`id`\n\n`image`\n\n`password`\n\n`site_detail_url`\n\n`title`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/chat`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-6"
@@ -4698,7 +4475,7 @@
     "/api/companies" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`abbreviation`\n\n`aliases`\n\n`api_detail_url`\n\n`date_added`\n\n`date_founded`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`location_address`\n\n`location_city`\n\n`location_country`\n\n`location_state`\n\n`name`\n\n`phone`\n\n`site_detail_url`\n\n`website`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/companies`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-9"
@@ -4765,7 +4542,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((abbreviation)|(date_added)|(date_founded)|(date_last_updated)(id)|(location_city)|(location_country)|(location_state)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((abbreviation)|(date_added)|(date_founded)|(date_last_updated)(id)|(location_city)|(location_country)|(location_state)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -4799,7 +4576,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Company.Sparse"
+                            "$ref" : "#/components/schemas/Company"
                           },
                           "type" : "array"
                         },
@@ -4825,7 +4602,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Company.Sparse"
+                            "$ref" : "#/components/schemas/Company"
                           },
                           "type" : "array"
                         },
@@ -4851,7 +4628,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Company.Sparse"
+                            "$ref" : "#/components/schemas/Company"
                           },
                           "type" : "array"
                         },
@@ -4891,7 +4668,7 @@
     "/api/company/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`abbreviation`\n\n`aliases`\n\n`api_detail_url`\n\n`characters`\n\n`concepts`\n\n`date_added`\n\n`date_founded`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`developed_games`\n\n`developer_releases`\n\n`distributor_releases`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`location_address`\n\n`location_city`\n\n`location_country`\n\n`location_state`\n\n`locations`\n\n`name`\n\n`objects`\n\n`people`\n\n`phone`\n\n`published_games`\n\n`publisher_releases`\n\n`site_detail_url`\n\n`website`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/company`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-8"
@@ -5059,7 +4836,7 @@
     "/api/concepts" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`first_appeared_in_franchise`\n\n`first_appeared_in_game`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/concepts`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-11"
@@ -5120,7 +4897,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -5154,7 +4931,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Concept.Sparse"
+                            "$ref" : "#/components/schemas/Concept"
                           },
                           "type" : "array"
                         },
@@ -5180,7 +4957,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Concept.Sparse"
+                            "$ref" : "#/components/schemas/Concept"
                           },
                           "type" : "array"
                         },
@@ -5206,7 +4983,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Concept.Sparse"
+                            "$ref" : "#/components/schemas/Concept"
                           },
                           "type" : "array"
                         },
@@ -5246,7 +5023,7 @@
     "/api/concept/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`characters`\n\n`concepts`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`first_appeared_in_franchise`\n\n`first_appeared_in_game`\n\n`franchises`\n\n`games`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`locations`\n\n`name`\n\n`objects`\n\n`people`\n\n`related_concepts`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/concept`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-10"
@@ -5406,7 +5183,7 @@
     "/api/dlcs" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`game`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`platform`\n\n`release_date`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/dlcs`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-13"
@@ -5469,7 +5246,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)|(platform)|(release_date)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)|(platform)|(release_date)):((asc)|(desc))$"
                 }
               ]
             }
@@ -5595,7 +5372,7 @@
     "/api/dlc/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`game`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`platform`\n\n`release_date`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/dlc`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-12"
@@ -5746,7 +5523,7 @@
     "/api/franchises" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/franchises`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-15"
@@ -5809,7 +5586,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Franchise.Sparse"
+                            "$ref" : "#/components/schemas/Franchise"
                           },
                           "type" : "array"
                         },
@@ -5835,7 +5612,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Franchise.Sparse"
+                            "$ref" : "#/components/schemas/Franchise"
                           },
                           "type" : "array"
                         },
@@ -5861,7 +5638,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Franchise.Sparse"
+                            "$ref" : "#/components/schemas/Franchise"
                           },
                           "type" : "array"
                         },
@@ -5901,7 +5678,7 @@
     "/api/franchise/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`characters`\n\n`concepts`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`games`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`locations`\n\n`name`\n\n`objects`\n\n`people`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/franchise`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-14"
@@ -6057,7 +5834,7 @@
     "/api/game_ratings" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`rating_board`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/game_ratings`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-19"
@@ -6110,7 +5887,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((id)|(name)|(rating_board)):((asc)|(desc))$",
+                  "pattern" : "^((id)|(name)|(rating_board)):((asc)|(desc))$"
                 }
               ]
             }
@@ -6236,7 +6013,7 @@
     "/api/game_rating/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`rating_board`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/game_rating`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-18"
@@ -6380,7 +6157,7 @@
     "/api/games" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`expected_release_day`\n\n`expected_release_month`\n\n`expected_release_quarter`\n\n`expected_release_year`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`number_of_user_reviews`\n\n`original_game_rating`\n\n`original_release_date`\n\n`platforms`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/games`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-17"
@@ -6450,7 +6227,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)|(number_of_user_reviews)|(original_game_rating)|(original_release_date)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)|(number_of_user_reviews)|(original_game_rating)|(original_release_date)):((asc)|(desc))$"
                 }
               ]
             }
@@ -6484,7 +6261,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Game.Sparse"
+                            "$ref" : "#/components/schemas/Game"
                           },
                           "type" : "array"
                         },
@@ -6510,7 +6287,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Game.Sparse"
+                            "$ref" : "#/components/schemas/Game"
                           },
                           "type" : "array"
                         },
@@ -6536,7 +6313,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Game.Sparse"
+                            "$ref" : "#/components/schemas/Game"
                           },
                           "type" : "array"
                         },
@@ -6576,7 +6353,7 @@
     "/api/game/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`characters`\n\n`concepts`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`developers`\n\n`dlcs`\n\n`expected_release_day`\n\n`expected_release_month`\n\n`expected_release_quarter`\n\n`expected_release_year`\n\n`first_appearance_characters`\n\n`first_appearance_concepts`\n\n`first_appearance_locations`\n\n`first_appearance_objects`\n\n`first_appearance_people`\n\n`franchises`\n\n`genres`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`images`\n\n`killed_characters`\n\n`locations`\n\n`name`\n\n`number_of_user_reviews`\n\n`objects`\n\n`original_game_rating`\n\n`original_release_date`\n\n`people`\n\n`platforms`\n\n`publishers`\n\n`releases`\n\n`reviews`\n\n`similar_games`\n\n`site_detail_url`\n\n`themes`\n\n`videos`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/game`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-16"
@@ -6756,7 +6533,7 @@
     "/api/genres" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/genres`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-21"
@@ -6909,7 +6686,7 @@
     "/api/genre/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/genre`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-20"
@@ -7057,7 +6834,7 @@
     "/api/images/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`icon_url`\n\n`image_tag`\n\n`medium_url`\n\n`original_url`\n\n`screen_large_url`\n\n`screen_url`\n\n`small_url`\n\n`super_url`\n\n`thumb_url`\n\n`tiny_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/images`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-22"
@@ -7235,7 +7012,7 @@
     "/api/locations" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`first_appeared_in_game`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/locations`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-24"
@@ -7295,7 +7072,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -7421,7 +7198,7 @@
     "/api/location/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`first_appeared_in_game`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/location`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-23"
@@ -7572,7 +7349,7 @@
     "/api/objects" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`,\n\n`api_detail_url`,\n\n`date_added`,\n\n`date_last_updated`,\n\n`deck`,\n\n`description`,\n\n`first_appeared_in_game`,\n\n`guid`,\n\n`id`,\n\n`image`,\n\n`image_tags`,\n\n`name`,\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/objects`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-26"
@@ -7632,7 +7409,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -7666,7 +7443,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Object.Sparse"
+                            "$ref" : "#/components/schemas/Object"
                           },
                           "type" : "array"
                         },
@@ -7692,7 +7469,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Object.Sparse"
+                            "$ref" : "#/components/schemas/Object"
                           },
                           "type" : "array"
                         },
@@ -7718,7 +7495,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Object.Sparse"
+                            "$ref" : "#/components/schemas/Object"
                           },
                           "type" : "array"
                         },
@@ -7758,7 +7535,7 @@
     "/api/object/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`\n\n`api_detail_url`\n\n`characters`\n\n`companies`\n\n`concepts`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`first_appeared_in_game`\n\n`franchises`\n\n`games`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`locations`\n\n`name`\n\n`objects`\n\n`people`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/object`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-25"
@@ -7917,7 +7694,7 @@
     "/api/people" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`,\n\n`aliases`\n\n`api_detail_url`\n\n`birth_date`\n\n`country`\n\n`date_added`\n\n`date_last_updated`\n\n`death_date`\n\n`deck`\n\n`description`\n\n`first_credited_game`\n\n`gender`\n\n`guid`\n\n`hometown`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/people`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-28"
@@ -7982,7 +7759,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((birth_date)|(country)|(date_added)|(date_last_updated)|(death_date)|(gender)|(hometown)|(id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((birth_date)|(country)|(date_added)|(date_last_updated)|(death_date)|(gender)|(hometown)|(id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -8016,7 +7793,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Person.Sparse"
+                            "$ref" : "#/components/schemas/Person"
                           },
                           "type" : "array"
                         },
@@ -8042,7 +7819,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Person.Sparse"
+                            "$ref" : "#/components/schemas/Person"
                           },
                           "type" : "array"
                         },
@@ -8068,7 +7845,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Person.Sparse"
+                            "$ref" : "#/components/schemas/Person"
                           },
                           "type" : "array"
                         },
@@ -8108,7 +7885,7 @@
     "/api/person/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`,\n\n`aliases`\n\n `api_detail_url`\n\n `birth_date`\n\n `characters`\n\n `concepts`\n\n `country`\n\n `date_added`\n\n `date_last_updated`\n\n `death_date`\n\n `deck`\n\n `description`\n\n `first_credited_game`\n\n `franchises`\n\n `games`\n\n `gender`\n\n `guid`\n\n `hometown`\n\n `id`\n\n `image`\n\n `image_tags`\n\n `locations`\n\n `name`\n\n `objects`\n\n `people`\n\n `site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/person`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-27"
@@ -8271,7 +8048,7 @@
     "/api/platforms" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`,\n\n`abbreviation`\n\n`api_detail_url`\n\n`company`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`install_base`\n\n`name`\n\n`online_support`\n\n`original_price`\n\n`release_date`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/platforms`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-30"
@@ -8335,7 +8112,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((abbreviation)|(date_added)|(date_last_updated)|(id)|(install_base)|(name)|(online_support)|(original_price)|(release_date)):((asc)|(desc))$",
+                  "pattern" : "^((abbreviation)|(date_added)|(date_last_updated)|(id)|(install_base)|(name)|(online_support)|(original_price)|(release_date)):((asc)|(desc))$"
                 }
               ]
             }
@@ -8461,7 +8238,7 @@
     "/api/platform/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`aliases`,\n\n`abbreviation`\n\n`api_detail_url`\n\n`company`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`install_base`\n\n`name`\n\n`online_support`\n\n`original_price`\n\n`release_date`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/platform`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-29"
@@ -8616,7 +8393,7 @@
     "/api/promos" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`deck`\n\n`guid`\n\n`id`\n\n`image`\n\n`link`\n\n`name`\n\n`resource_type`\n\n`user`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/promos`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-32"
@@ -8673,7 +8450,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -8799,7 +8576,7 @@
     "/api/promo/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`deck`\n\n`guid`\n\n`id`\n\n`image`\n\n`link`\n\n`name`\n\n`resource_type`\n\n`user`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/promo`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-31"
@@ -8947,7 +8724,7 @@
     "/api/rating_boards" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/rating_boards`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-34"
@@ -9004,7 +8781,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -9038,7 +8815,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/RatingBoard.Sparse"
+                            "$ref" : "#/components/schemas/RatingBoard"
                           },
                           "type" : "array"
                         },
@@ -9064,7 +8841,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/RatingBoard.Sparse"
+                            "$ref" : "#/components/schemas/RatingBoard"
                           },
                           "type" : "array"
                         },
@@ -9090,7 +8867,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/RatingBoard.Sparse"
+                            "$ref" : "#/components/schemas/RatingBoard"
                           },
                           "type" : "array"
                         },
@@ -9130,7 +8907,7 @@
     "/api/rating_board/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`region`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/rating_board`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-33"
@@ -9279,7 +9056,7 @@
     "/api/regions" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/regions`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-36"
@@ -9336,7 +9113,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -9370,7 +9147,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Region.Sparse"
+                            "$ref" : "#/components/schemas/Region"
                           },
                           "type" : "array"
                         },
@@ -9396,7 +9173,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Region.Sparse"
+                            "$ref" : "#/components/schemas/Region"
                           },
                           "type" : "array"
                         },
@@ -9422,7 +9199,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Region.Sparse"
+                            "$ref" : "#/components/schemas/Region"
                           },
                           "type" : "array"
                         },
@@ -9462,7 +9239,7 @@
     "/api/region/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`guid`\n\n`id`\n\n`image`\n\n`name`\n\n`rating_boards`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/region`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-35"
@@ -9611,7 +9388,7 @@
     "/api/releases" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`expected_release_day`\n\n`expected_release_month`\n\n`expected_release_quarter`\n\n`expected_release_year`\n\n`game`\n\n`game_rating`\n\n`guid`\n\n`id`\n\n`image`\n\n`maximum_players`\n\n`minimum_players`\n\n`multiplayer_features`\n\n`name`\n\n`platform`\n\n`product_code_type`\n\n`product_code_value`\n\n`region`\n\n`release_date`\n\n`resolutions`\n\n`singleplayer_features`\n\n`site_detail_url`\n\n`sound_systems`\n\n`widescreen_support`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/releases`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-38"
@@ -9689,7 +9466,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(game)|(game_rating)|(id)|(name)|(platform)|(product_code_type)|(product_code_value)|(region)|(release_date)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(game)|(game_rating)|(id)|(name)|(platform)|(product_code_type)|(product_code_value)|(region)|(release_date)):((asc)|(desc))$"
                 }
               ]
             }
@@ -9723,7 +9500,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Release.Sparse"
+                            "$ref" : "#/components/schemas/Release"
                           },
                           "type" : "array"
                         },
@@ -9749,7 +9526,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Release.Sparse"
+                            "$ref" : "#/components/schemas/Release"
                           },
                           "type" : "array"
                         },
@@ -9775,7 +9552,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Release.Sparse"
+                            "$ref" : "#/components/schemas/Release"
                           },
                           "type" : "array"
                         },
@@ -9815,7 +9592,7 @@
     "/api/release/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`developers`\n\n`expected_release_day`\n\n`expected_release_month`\n\n`expected_release_quarter`\n\n`expected_release_year`\n\n`game`\n\n`game_rating`\n\n`guid`\n\n`id`\n\n`image`\n\n`maximum_players`\n\n`minimum_players`\n\n`multiplayer_features`\n\n`name`\n\n`platform`\n\n`product_code_type`\n\n`product_code_value`\n\n`publishers`\n\n`region`\n\n`release_date`\n\n`resolutions`\n\n`singleplayer_features`\n\n`site_detail_url`\n\n`sound_systems`\n\n`widescreen_support`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/release`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-37"
@@ -9983,7 +9760,7 @@
     "/api/reviews" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`deck`\n\n`description`\n\n`dlc_name`\n\n`game`\n\n`guid`\n\n`id`\n\n`publish_date`\n\n`release`\n\n`reviewer`\n\n`score`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/reviews`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-40"
@@ -10042,7 +9819,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((publish_date)|(reviewer)|(score)):((asc)|(desc))$",
+                  "pattern" : "^((publish_date)|(reviewer)|(score)):((asc)|(desc))$"
                 }
               ]
             }
@@ -10076,7 +9853,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Review.Sparse"
+                            "$ref" : "#/components/schemas/Release"
                           },
                           "type" : "array"
                         },
@@ -10102,7 +9879,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Review.Sparse"
+                            "$ref" : "#/components/schemas/Release"
                           },
                           "type" : "array"
                         },
@@ -10128,7 +9905,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Review.Sparse"
+                            "$ref" : "#/components/schemas/Release"
                           },
                           "type" : "array"
                         },
@@ -10168,7 +9945,7 @@
     "/api/review/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`deck`\n\n`description`\n\n`dlc_name`\n\n`game`\n\n`guid`\n\n`id`\n\n`platforms`\n\n`publish_date`\n\n`release`\n\n`reviewer`\n\n`score`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/review`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-39"
@@ -10319,7 +10096,7 @@
     "/api/search" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`abbreviation`\n\n`aliases`\n\n`api_detail_url`\n\n`associations`\n\n`birth_date`\n\n`birthday`\n\n`country`\n\n`date_added`\n\n`date_founded`\n\n`date_last_updated`\n\n`death_date`\n\n`deck`\n\n`description`\n\n`embed_player`\n\n`expected_release_day`\n\n`expected_release_month`\n\n`expected_release_quarter`\n\n`expected_release_year`\n\n`first_appeared_in_franchise`\n\n`first_appeared_in_game`\n\n`first_credited_game`\n\n`gender`\n\n`guid`\n\n`hd_url`\n\n`high_url`\n\n`hometown`\n\n`id`\n\n`image`\n\n`image_tags`\n\n`last_name`\n\n`length_seconds`\n\n`location_address`\n\n`location_city`\n\n`location_country`\n\n`location_state`\n\n`low_url`\n\n`name`\n\n`number_of_user_reviews`\n\n`original_game_rating`\n\n`original_release_date`\n\n`phone`\n\n`platforms`\n\n`premium`\n\n`publish_date`\n\n`real_name`\n\n`resource_type`\n\n`saved_time`\n\n`site_detail_url`\n\n`url`\n\n`user`\n\n`video_categories`\n\n`video_show`\n\n`video_type`\n\n`website`\n\n`youtube_id`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/search`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-41"
@@ -10541,7 +10318,7 @@
     "/api/themes" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`guid`\n\n`id`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/theme`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-43"
@@ -10593,7 +10370,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -10719,7 +10496,7 @@
     "/api/theme/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`guid`\n\n`id`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/theme`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-42"
@@ -10977,7 +10754,7 @@
     "/api/user_reviews" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`dlc`\n\n`game`\n\n`guid`\n\n`id`\n\n`release`\n\n`reviewer`\n\n`score`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/user_reviews`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-46"
@@ -11040,7 +10817,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((date_added)|(date_last_updated)|(reviewer)|(score)):((asc)|(desc))$",
+                  "pattern" : "^((date_added)|(date_last_updated)|(reviewer)|(score)):((asc)|(desc))$"
                 }
               ]
             }
@@ -11166,7 +10943,7 @@
     "/api/user_review/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`date_added`\n\n`date_last_updated`\n\n`deck`\n\n`description`\n\n`dlc`\n\n`game`\n\n`guid`\n\n`id`\n\n`release`\n\n`reviewer`\n\n`score`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/user_review`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-45"
@@ -11317,7 +11094,7 @@
     "/api/videos" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`associations`\n\n`deck`\n\n`embed_player`\n\n`guid`\n\n`hd_url`\n\n`high_url`\n\n`id`\n\n`image`\n\n`length_seconds`\n\n`low_url`\n\n`name`\n\n`premium`\n\n`publish_date`\n\n`saved_time`\n\n`site_detail_url`\n\n`url`\n\n`user`\n\n`video_categories`\n\n`video_show`\n\n`video_type`\n\n`youtube_id`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/videos`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-48"
@@ -11386,7 +11163,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((id)|(length_seconds)|(name)|(publish_date)|(user)|(video_categories)|(video_type)|(video_show)):((asc)|(desc))$",
+                  "pattern" : "^((id)|(length_seconds)|(name)|(publish_date)|(user)|(video_categories)|(video_type)|(video_show)):((asc)|(desc))$"
                 }
               ]
             }
@@ -11423,7 +11200,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Video.Sparse"
+                            "$ref" : "#/components/schemas/Video"
                           },
                           "type" : "array"
                         },
@@ -11449,7 +11226,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Video.Sparse"
+                            "$ref" : "#/components/schemas/Video"
                           },
                           "type" : "array"
                         },
@@ -11475,7 +11252,7 @@
                       "properties" : {
                         "results" : {
                           "items" : {
-                            "$ref" : "#/components/schemas/Video.Sparse"
+                            "$ref" : "#/components/schemas/Video"
                           },
                           "type" : "array"
                         },
@@ -11515,7 +11292,7 @@
     "/api/video/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`associations`\n\n`crew`\n\n`deck`\n\n`embed_player`\n\n`guid`\n\n`hd_url`\n\n`high_url`\n\n`hosts`\n\n`id`\n\n`image`\n\n`length_seconds`\n\n`low_url`\n\n`name`\n\n`premium`\n\n`publish_date`\n\n`saved_time`\n\n`site_detail_url`\n\n`url`\n\n`user`\n\n`video_categories`\n\n`video_show`\n\n`video_type`\n\n`youtube_id`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/video`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-47"
@@ -11890,7 +11667,7 @@
     "/api/video_categories" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`deck`\n\n`id`\n\n`image`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/video_categories`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-52"
@@ -11937,7 +11714,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((id)|(name)):((asc)|(desc))$",
+                  "pattern" : "^((id)|(name)):((asc)|(desc))$"
                 }
               ]
             }
@@ -12048,7 +11825,7 @@
     "/api/video_category/{id}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`deck`\n\n`id`\n\n`image`\n\n`name`\n\n`site_detail_url`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/video_category`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-51"
@@ -12192,7 +11969,7 @@
     "/api/video_shows" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`active`\n\n`api_detail_url`\n\n`api_videos_url`\n\n`deck`\n\n`display_nav`\n\n`guid`\n\n`id`\n\n`image`\n\n`latest`\n\n`logo`\n\n`position`\n\n`premium`\n\n`site_detail_url`\n\n`title`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/video_shows`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-54"
@@ -12253,7 +12030,7 @@
                   "$ref" : "#/components/schemas/Sort"
                 },
                 {
-                  "pattern" : "^((id)|(title)|(position)|(latest)):((asc)|(desc))$",
+                  "pattern" : "^((id)|(title)|(position)|(latest)):((asc)|(desc))$"
                 }
               ]
             }
@@ -12379,7 +12156,7 @@
     "/api/video_show/{guid}" : {
       "description" : "##ENTER##",
       "get" : {
-        "description" : "##ENTER##",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`active`\n\n`api_detail_url`\n\n`api_videos_url`\n\n`deck`\n\n`display_nav`\n\n`guid`\n\n`id`\n\n`image`\n\n`latest`\n\n`logo`\n\n`position`\n\n`premium`\n\n`site_detail_url`\n\n`title`",
         "externalDocs" : {
           "description" : "Official documentation for `/api/video_show`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-53"
@@ -12532,7 +12309,7 @@
       "description" : "##ENTER##",
       "get" : {
         "deprecated" : true,
-        "description" : "##ENTER##<br />DEPRECATED: Please use the video_category or the video_show endpoint",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`deck`\n\n`id`\n\n`name`\n\n`site_detail_url`\n\nDEPRECATED: Please use the video_category or the video_show endpoint",
         "externalDocs" : {
           "description" : "Official documentation for `/api/video_types`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-50"
@@ -12681,7 +12458,7 @@
       "description" : "##ENTER##",
       "get" : {
         "deprecated" : true,
-        "description" : "##ENTER##<br />DEPRECATED: Please use the video_category or the video_show endpoint",
+        "description" : "##ENTER##\n\nIf `field_list` is not specified, the following fields are included:\n\n`api_detail_url`\n\n`deck`\n\n`id`\n\n`name`\n\n`site_detail_url`\n\nDEPRECATED: Please use the video_category or the video_show endpoint",
         "externalDocs" : {
           "description" : "Official documentation for `/api/video_type`",
           "url" : "https://www.giantbomb.com/api/documentation/#toc-0-49"
