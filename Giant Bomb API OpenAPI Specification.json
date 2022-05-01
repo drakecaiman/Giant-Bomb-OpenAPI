@@ -960,6 +960,7 @@
       },
       "FieldList" : {
         "description" : "##ENTER##",
+        "items" : {},
         "type" : "array"
       },
       "Filter" : {
@@ -2676,6 +2677,7 @@
           },
           "product_code_type" : {
             "description" : "The type of product code the release has (ex. UPC/A, ISBN-10, EAN-13).",
+            "items" : {},
             "nullable" : true,
             "type" : "array"
           },
